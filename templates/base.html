@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Chat</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <h1>Chitchat Chat</h1>
+
+
+    <div class="levo">
+    <form action="/" method="post">
+        <label>Ime: </label><input name="ime">
+        <br>
+        <br>
+        <label>Emotikoni:</label>
+            <div class="emotikoni">
+                <img src="/assets/emote-icons/GrRr.gif" alt="GrRr" onclick="insertSmiley('GrRr')">
+                <img src="/assets/emote-icons/SmL.gif" alt="SmL" onclick="insertSmiley('SmL')">
+                <img src="/assets/emote-icons/WaT.gif" alt="WaT" onclick="insertSmiley('WaT')">
+                <img src="/assets/emote-icons/KrNk.gif" alt="KrNk" onclick="insertSmiley('KrNk')">
+                <img src="/assets/emote-icons/maYbe.gif" alt="maYbe" onclick="insertSmiley('maYbe')">
+            </div>
+        <div>
+            <br>
+            <label>Besedilo:</label>
+            <br>
+            <textarea name="vnos" required></textarea>
+        </div>
+        <button type="submit">Objavi</button>
+    </form>
+    </div>
+
+    <div class="desno">
+    {% for sporocilo in seznam %}
+        <div class="msg">
+            <div class="top">
+                <div class="ime">
+                {{ sporocilo.ime }}
+                </div>
+                <span>
+                    {{ sporocilo.nastanek }}
+                </span>
+            </div>
+            <div class="tekst">
+                {{ sporocilo.vnos }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+</body>
+</html>

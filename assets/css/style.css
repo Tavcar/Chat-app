@@ -1,0 +1,107 @@
+body {
+    background-color: whitesmoke;
+    #width: 80%;
+    
+}
+
+h1 {
+    font-family: fantasy;
+    color: firebrick;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.levo {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin-left: 5%;
+    
+}
+
+.desno {
+    width: 45%;
+    display: inline-block;
+    float: right;
+    margin-right: 5%;
+}
+
+label {
+    color: firebrick;
+    font-family: fantasy;
+}
+
+.msg {
+    display: inline-block;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: mistyrose;
+    padding: 0px;
+    font-family: fantasy;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.top {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    background-color: firebrick;
+    color:whitesmoke;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.tekst {
+    padding: 5px;
+}
+
+span {
+    float: right;
+    font-size: 10px;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    
+}
+
+.ime {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+textarea {
+    height: 80px;
+    min-width: 200px;
+    max-width: 500px;
+    width: 70%;
+    border: 1px solid black;
+}
+
+input {
+    border: 1px solid black;
+}
+
+button {
+    background-color: firebrick;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid black;
+    cursor: pointer;
+    min-width: 90px;
+    font: fantasy;
+    font-weight: 600;
+    display: inline-block;
+    float: right;
+    margin-right: 30%;
+}
