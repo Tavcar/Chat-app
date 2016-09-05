@@ -4,6 +4,9 @@ import os
 import jinja2
 import webapp2
 from models import Sporocilo
+from operator import attrgetter
+from datetime import datetime
+
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
@@ -30,13 +33,15 @@ class BaseHandler(webapp2.RequestHandler):
 class MainHandler(BaseHandler):
     def get(self):
         seznam = Sporocilo.query().fetch()
-        params = {"seznam": seznam}
+        urejen = sorted(seznam, key=attrgetter("nastanek"), reverse=True)
+        params = {"seznam": urejen}
         return self.render_template("base.html", params=params)
 
     def post(self):
         ime = self.request.get("ime") or "Anonimnež"
         vnos = self.request.get("vnos")
-        sporocilo = Sporocilo(ime=ime, vnos=vnos)
+        nastanek = datetime.now().strftime("%d-%m-%Y ob %H.%M.%S")
+        sporocilo = Sporocilo(ime=ime, vnos=vnos, nastanek=nastanek)
         sporocilo.put()
         return self.redirect_to("prva")
 
